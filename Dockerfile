@@ -1,7 +1,12 @@
 FROM node:16
+
 WORKDIR /app
-ENV PORT 8080
-COPY . /app
-RUN cd /app/src/ 
-RUN npm install 
-ENTRYPOINT [ "/app/entry-point.sh" ]
+
+COPY src ./
+RUN npm install
+
+COPY entry-point.sh ./
+RUN chmod +x entry-point.sh
+
+
+ENTRYPOINT [ "./entry-point.sh" ]
