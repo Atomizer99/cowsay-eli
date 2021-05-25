@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-if [ $# -q 1 ]
+if [ $# -eq 1 ]
 then
     echo "###############################"
     echo "Recieved argument, PORT=$1"
